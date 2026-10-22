@@ -4,119 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer Zone | Home</title>
-    
-    <!-- BOOTSTRAP CSS: Conecta o framework para criar as colunas e o layout responsivo automaticamente -->
+    <!-- Links corretos do Bootstrap CSS -->
     <link href="https://jsdelivr.net" rel="stylesheet">
 </head>
-<body class="bg-dark text-white"> <!-- Deixamos o fundo escuro (Gamer) padrão do Bootstrap -->
+<body class="bg-dark text-white">
 
-    <!-- [REQUISITO: MENU] - Usando a tag semântica <header> e <nav> -->
+    <!-- MENU -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
             <div class="container">
                 <a class="navbar-brand fw-bold text-info" href="index.html">🎮 GAMER_ZONE</a>
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="index.html">Home</a>
-                    <a class="nav-link" href="login.html">Login/Cadastro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="login.html">Login/Cadastro</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- O <main> indica ao navegador que aqui está o conteúdo principal da página -->
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="container my-5">
 
-        <!-- [REQUISITO: BANNER] - Um destaque rotativo (Carousel) usando Bootstrap -->
+        <!-- BANNER ROTATIVO / CAROUSEL -->
         <section id="banner" class="mb-5">
             <div id="carouselGamer" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner rounded-3">
-                    <div class="carousel-item active bg-secondary p-5 text-center">
-                        <h2 class="display-4 fw-bold">SETUPS EXCLUSIVOS</h2>
-                        <p class="lead">Monte o seu PC dos sonhos com as melhores placas de vídeo.</p>
-                        <a href="#destaques" class="btn btn-info btn-lg">Ver Produtos</a>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselGamer" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselGamer" data-bs-slide-to="1"></button>
+                </div>
+                <div class="carousel-inner rounded-3 shadow">
+                    <div class="carousel-item active bg-black text-center py-5 border border-secondary" style="min-height: 300px;">
+                        <div class="p-4">
+                            <h2 class="display-4 fw-bold text-info">SETUPS EXCLUSIVOS</h2>
+                            <p class="lead text-light">Monte o seu PC dos sonhos com as melhores placas de vídeo do mercado.</p>
+                            <a href="#destaques" class="btn btn-info btn-lg fw-bold mt-2">VER PRODUTOS</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item bg-black text-center py-5 border border-secondary" style="min-height: 300px;">
+                        <div class="p-4">
+                            <h2 class="display-4 fw-bold text-warning">UPGRADE UP TO DATE</h2>
+                            <p class="lead text-light">Periféricos de alta performance com até 30% de desconto à vista.</p>
+                            <a href="#novidades" class="btn btn-warning btn-lg fw-bold mt-2">CONFERIR OFERTAS</a>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselGamer" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselGamer" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </section>
 
-        <!-- [REQUISITO: DESTAQUE] - Grid responsivo. col-12 em celular, col-md-4 em telas maiores -->
+        <!-- DESTAQUES -->
         <section id="destaques" class="mb-5">
-            <h3 class="text-info mb-4">🔥 Produtos em Destaque</h3>
+            <h3 class="text-info mb-4 border-bottom border-secondary pb-2">🔥 Em Destaque</h3>
             <div class="row g-4">
-                <!-- Produto 1 -->
                 <div class="col-12 col-md-4">
-                    <div class="card bg-secondary text-white h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Teclado Mecânico RGB</h5>
-                            <p class="card-text">R$ 349,90</p>
-                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                    <div class="card bg-black border-secondary text-white h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-info">Teclado Mecânico RGB</h5>
+                            <p class="card-text fs-4 fw-semibold text-warning">R$ 349,90</p>
+                            <button class="btn btn-outline-info w-100 btn-comprar fw-bold">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
-                <!-- Produto 2 -->
                 <div class="col-12 col-md-4">
-                    <div class="card bg-secondary text-white h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Mouse Gamer 16000 DPI</h5>
-                            <p class="card-text">R$ 199,90</p>
-                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                    <div class="card bg-black border-secondary text-white h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-info">Mouse Gamer 16000 DPI</h5>
+                            <p class="card-text fs-4 fw-semibold text-warning">R$ 199,90</p>
+                            <button class="btn btn-outline-info w-100 btn-comprar fw-bold">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
-                <!-- Produto 3 -->
                 <div class="col-12 col-md-4">
-                    <div class="card bg-secondary text-white h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Monitor 144Hz 1ms</h5>
-                            <p class="card-text">R$ 1.299,90</p>
-                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                    <div class="card bg-black border-secondary text-white h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <h5 class="card-title text-info">Headset Gamer 7.1 Surround</h5>
+                            <p class="card-text fs-4 fw-semibold text-warning">R$ 289,90</p>
+                            <button class="btn btn-outline-info w-100 btn-comprar fw-bold">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- [REQUISITO: NOVIDADES] -->
+        <!-- NOVIDADES -->
         <section id="novidades" class="mb-5">
-            <h3 class="text-info mb-4">🚀 Novidades do Mercado</h3>
-            <div class="bg-black p-4 rounded-3 border border-secondary">
-                <h4>Chegaram as novas Placas de Vídeo RTX Série 50!</h4>
-                <p>Desempenho gráfico de última geração com Ray Tracing avançado. Estoque extremamente limitado.</p>
-                <span class="badge bg-danger">Lançamento</span>
+            <h3 class="text-info mb-4 border-bottom border-secondary pb-2">✨ Lançamentos e Novidades</h3>
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="card bg-black border-secondary text-white p-3">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">NOVO</span>
+                            <h5 class="card-title">Monitor UltraWide 240Hz</h5>
+                            <p class="card-text text-muted">Imersão total e taxa de atualização extrema para jogos competitivos.</p>
+                            <p class="text-warning fs-5 fw-bold">R$ 1.899,00</p>
+                            <button class="btn btn-info btn-sm btn-comprar fw-bold">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card bg-black border-secondary text-white p-3">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">NOVO</span>
+                            <h5 class="card-title">Placa de Vídeo RTX 4070 TI</h5>
+                            <p class="card-text text-muted">Ray Tracing avançado e inteligência artificial para o máximo de frames.</p>
+                            <p class="text-warning fs-5 fw-bold">R$ 4.599,00</p>
+                            <button class="btn btn-info btn-sm btn-comprar fw-bold">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- [REQUISITO: GALERIA] - Espaço reservado para as fotos da loja ou setups -->
+        <!-- GALERIA -->
         <section id="galeria" class="mb-5">
-            <h3 class="text-info mb-4">📸 Galeria da Comunidade</h3>
-            <div class="row g-2">
-                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 1</div>
-                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 2</div>
-                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 3</div>
-                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 4</div>
+            <h3 class="text-info mb-4 border-bottom border-secondary pb-2">📸 Galeria de Componentes</h3>
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered border-secondary align-middle text-center">
+                    <thead>
+                        <tr class="table-secondary text-dark">
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Especificação Técnica</th>
+                            <th scope="col">Disponibilidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold text-info">Processadores</td>
+                            <td>Intel Core i7 / AMD Ryzen 7 de última geração</td>
+                            <td><span class="badge bg-success">Em Estoque</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-info">Memória RAM</td>
+                            <td>DDR5 16GB / 32GB RGB 5200MHz</td>
+                            <td><span class="badge bg-success">Em Estoque</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-info">Armazenamento</td>
+                            <td>SSD NVMe M.2 de 1TB de alta velocidade</td>
+                            <td><span class="badge bg-warning text-dark">Poucas Unidades</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
     </main>
 
-    <!-- [REQUISITO: RODAPÉ] - Tag semântica <footer> -->
+    <!-- RODAPÉ -->
     <footer class="bg-black text-center py-4 border-top border-secondary mt-5">
         <div class="container text-muted">
-            <p>&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End.</p>
+            <p class="mb-0">&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End do SENAI.</p>
         </div>
     </footer>
 
-    <!-- BOOTSTRAP SCRIPT (Para o menu mobile e efeitos funcionarem) -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- JQUERY (Pedido no enunciado para interações) -->
+    <!-- SCRIPTS -->
     <script src="https://jquery.com"></script>
+    <script src="https://jsdelivr.net"></script>
 
-    <!-- CÓDIGO JAVASCRIPT/JQUERY (Interatividade nos botões pedida nos critérios) -->
     <script>
-        $(document).ready(function(){
-            // Quando clicar em qualquer botão de comprar, exibe um alerta dinâmico
-            $('.btn-comprar').click(function(){
-                alert('Item adicionado ao carrinho com sucesso!');
+        $(document).ready(function() {
+            $('.btn-comprar').on('click', function() {
+                alert('🚀 Item adicionado ao Squad! Finalize seu login para concluir a compra.');
             });
         });
     </script>
