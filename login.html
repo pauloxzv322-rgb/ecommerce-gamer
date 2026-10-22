@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Zone | Login</title>
+    <!-- Bootstrap CSS para estilização rápida e responsiva -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+    <!-- MENU (Idêntico ao da Home para manter o padrão do site) -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-info" href="index.html">🎮 GAMER_ZONE</a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" href="login.html">Login/Cadastro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTAINER DO FORMULÁRIO -->
+    <main class="container my-5 d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+        <div class="card bg-black border-secondary p-4 text-white" style="width: 100%; max-width: 450px;">
+            <div class="card-body">
+                <h3 class="text-center text-info mb-4">ÁREA DO JOGADOR</h3>
+                
+                <!-- Alerta de Erro Oculto (Será mostrado via JavaScript se faltar dados) -->
+                <div id="mensagem-erro" class="alert alert-danger d-none" role="alert"></div>
+                
+                <!-- Alerta de Sucesso Oculto -->
+                <div id="mensagem-sucesso" class="alert alert-success d-none" role="alert"></div>
+
+                <!-- [REQUISITO: FORMULÁRIO] -->
+                <form id="formLogin">
+                    <!-- Campo de E-mail / Usuário -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail ou Usuário</label>
+                        <input type="text" class="form-control bg-dark text-white border-secondary" id="email" placeholder="Digite seu e-mail gamer">
+                    </div>
+
+                    <!-- Campo de Senha -->
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control bg-dark text-white border-secondary" id="senha" placeholder="Digite sua senha">
+                    </div>
+
+                    <!-- Botão de Entrar -->
+                    <button type="submit" class="btn btn-info w-100 fw-bold mt-3">ENTRAR NO SQUAD</button>
+                </form>
+
+                <div class="text-center mt-4">
+                    <p class="small text-muted">Ainda não tem conta? <a href="#" class="text-info text-decoration-none">Cadastre-se aqui</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-black text-center py-4 border-top border-secondary fixed-bottom">
+        <div class="container text-muted">
+            <p>&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts necessários: Bootstrap e jQuery -->
+    <script src="https://jsdelivr.net"></script>
+    <script src="https://jquery.com"></script>
+
+    <!-- [REQUISITO: JAVASCRIPT / JQUERY PARA INTERAÇÃO E VALIDAÇÃO] -->
+    <script>
+        $(document).ready(function() {
+            // Monitora o envio (submit) do formulário
+            $('#formLogin').on('submit', function(event) {
+                event.preventDefault(); // Impede a página de recarregar antes da validação
+
+                // Captura os valores digitados tirando espaços vazios
+                let email = $('#email').val().trim();
+                let senha = $('#senha').val().trim();
+
+                // Esconde alertas anteriores
+                $('#mensagem-erro').addClass('d-none');
+                $('#mensagem-sucesso').addClass('d-none');
+
+                // Validação: Verifica se os campos estão em branco
+                if (email === "" || senha === "") {
+                    $('#mensagem-erro').removeClass('d-none').text('⚠️ Por favor, preencha todos os campos para fazer o login.');
+                } else if (senha.length < 6) {
+                    // Validação extra: Senha muito curta
+                    $('#mensagem-erro').removeClass('d-none').text('⚠️ A senha deve ter no mínimo 6 caracteres.');
+                } else {
+                    // Se passar nas validações, mostra sucesso
+                    $('#mensagem-sucesso').removeClass('d-none').text('🎉 Login efetuado com sucesso! Redirecionando...');
+                    
+                    // Simula um redirecionamento após 2 segundos
+                    setTimeout(function() {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

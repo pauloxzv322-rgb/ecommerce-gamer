@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Zone | Home</title>
+    
+    <!-- BOOTSTRAP CSS: Conecta o framework para criar as colunas e o layout responsivo automaticamente -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-dark text-white"> <!-- Deixamos o fundo escuro (Gamer) padrão do Bootstrap -->
+
+    <!-- [REQUISITO: MENU] - Usando a tag semântica <header> e <nav> -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-info" href="index.html">🎮 GAMER_ZONE</a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="login.html">Login/Cadastro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- O <main> indica ao navegador que aqui está o conteúdo principal da página -->
+    <main class="container my-5">
+
+        <!-- [REQUISITO: BANNER] - Um destaque rotativo (Carousel) usando Bootstrap -->
+        <section id="banner" class="mb-5">
+            <div id="carouselGamer" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded-3">
+                    <div class="carousel-item active bg-secondary p-5 text-center">
+                        <h2 class="display-4 fw-bold">SETUPS EXCLUSIVOS</h2>
+                        <p class="lead">Monte o seu PC dos sonhos com as melhores placas de vídeo.</p>
+                        <a href="#destaques" class="btn btn-info btn-lg">Ver Produtos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [REQUISITO: DESTAQUE] - Grid responsivo. col-12 em celular, col-md-4 em telas maiores -->
+        <section id="destaques" class="mb-5">
+            <h3 class="text-info mb-4">🔥 Produtos em Destaque</h3>
+            <div class="row g-4">
+                <!-- Produto 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="card bg-secondary text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Teclado Mecânico RGB</h5>
+                            <p class="card-text">R$ 349,90</p>
+                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="card bg-secondary text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Mouse Gamer 16000 DPI</h5>
+                            <p class="card-text">R$ 199,90</p>
+                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="card bg-secondary text-white h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Monitor 144Hz 1ms</h5>
+                            <p class="card-text">R$ 1.299,90</p>
+                            <button class="btn btn-dark w-100 btn-comprar">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [REQUISITO: NOVIDADES] -->
+        <section id="novidades" class="mb-5">
+            <h3 class="text-info mb-4">🚀 Novidades do Mercado</h3>
+            <div class="bg-black p-4 rounded-3 border border-secondary">
+                <h4>Chegaram as novas Placas de Vídeo RTX Série 50!</h4>
+                <p>Desempenho gráfico de última geração com Ray Tracing avançado. Estoque extremamente limitado.</p>
+                <span class="badge bg-danger">Lançamento</span>
+            </div>
+        </section>
+
+        <!-- [REQUISITO: GALERIA] - Espaço reservado para as fotos da loja ou setups -->
+        <section id="galeria" class="mb-5">
+            <h3 class="text-info mb-4">📸 Galeria da Comunidade</h3>
+            <div class="row g-2">
+                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 1</div>
+                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 2</div>
+                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 3</div>
+                <div class="col-6 col-md-3 bg-secondary text-center py-5 rounded">Foto Setup 4</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- [REQUISITO: RODAPÉ] - Tag semântica <footer> -->
+    <footer class="bg-black text-center py-4 border-top border-secondary mt-5">
+        <div class="container text-muted">
+            <p>&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End.</p>
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP SCRIPT (Para o menu mobile e efeitos funcionarem) -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- JQUERY (Pedido no enunciado para interações) -->
+    <script src="https://jquery.com"></script>
+
+    <!-- CÓDIGO JAVASCRIPT/JQUERY (Interatividade nos botões pedida nos critérios) -->
+    <script>
+        $(document).ready(function(){
+            // Quando clicar em qualquer botão de comprar, exibe um alerta dinâmico
+            $('.btn-comprar').click(function(){
+                alert('Item adicionado ao carrinho com sucesso!');
+            });
+        });
+    </script>
+</body>
+</html>
