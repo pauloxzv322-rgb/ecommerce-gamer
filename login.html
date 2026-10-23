@@ -4,71 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer Zone | Login</title>
-    <!-- Bootstrap CSS para estilização rápida e responsiva -->
+    <!-- Link oficial do Bootstrap CSS para ativar o tema escuro -->
     <link href="https://jsdelivr.net" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
 
-    <!-- MENU (Idêntico ao da Home para manter o padrão do site) -->
+    <!-- MENU -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
             <div class="container">
                 <a class="navbar-brand fw-bold text-info" href="index.html">🎮 GAMER_ZONE</a>
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link active" href="login.html">Login/Cadastro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="login.html">Login/Cadastro</a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- CONTAINER DO FORMULÁRIO -->
-    <main class="container my-5 d-flex justify-content-center align-items-center" style="min-height: 70vh;">
-        <div class="card bg-black border-secondary p-4 text-white" style="width: 100%; max-width: 450px;">
-            <div class="card-body">
-                <h3 class="text-center text-info mb-4">ÁREA DO JOGADOR</h3>
-                
-                <!-- Alerta de Erro Oculto (Será mostrado via JavaScript se faltar dados) -->
-                <div id="mensagem-erro" class="alert alert-danger d-none" role="alert"></div>
-                
-                <!-- Alerta de Sucesso Oculto -->
-                <div id="mensagem-sucesso" class="alert alert-success d-none" role="alert"></div>
+    <!-- FORMULÁRIO DE LOGIN -->
+    <main class="container my-5 d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+        <div class="card bg-black border-secondary text-white p-4 shadow-lg rounded-3" style="max-width: 450px; width: 100%;">
+            <h3 class="text-center text-info fw-bold mb-4">🕹️ ÁREA DO JOGADOR</h3>
+            
+            <!-- Divs de Alertas controladas pelo JavaScript -->
+            <div id="mensagem-erro" class="alert alert-danger d-none fw-bold small py-2 mb-3" role="alert"></div>
+            <div id="mensagem-sucesso" class="alert alert-success d-none fw-bold small py-2 mb-3" role="alert"></div>
 
-                <!-- [REQUISITO: FORMULÁRIO] -->
-                <form id="formLogin">
-                    <!-- Campo de E-mail / Usuário -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-mail ou Usuário</label>
-                        <input type="text" class="form-control bg-dark text-white border-secondary" id="email" placeholder="Digite seu e-mail gamer">
-                    </div>
-
-                    <!-- Campo de Senha -->
-                    <div class="mb-3">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" class="form-control bg-dark text-white border-secondary" id="senha" placeholder="Digite sua senha">
-                    </div>
-
-                    <!-- Botão de Entrar -->
-                    <button type="submit" class="btn btn-info w-100 fw-bold mt-3">ENTRAR NO SQUAD</button>
-                </form>
-
-                <div class="text-center mt-4">
-                    <p class="small text-muted">Ainda não tem conta? <a href="#" class="text-info text-decoration-none">Cadastre-se aqui</a></p>
+            <form id="formLogin">
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">E-mail ou Usuário</label>
+                    <input type="text" id="email" class="form-control bg-dark text-white border-secondary" placeholder="Digite seu e-mail gamer">
                 </div>
-            </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label fw-semibold">Senha</label>
+                    <input type="password" id="senha" class="form-control bg-dark text-white border-secondary" placeholder="Digite sua senha">
+                </div>
+                <div class="mb-3 text-end">
+                    <a href="#" class="text-decoration-none text-info small">Ainda não tem conta? Cadastre-se aqui</a>
+                </div>
+                <button type="submit" class="btn btn-info w-100 fw-bold py-2 mt-2">ENTRAR NO SQUAD</button>
+            </form>
         </div>
     </main>
 
     <!-- RODAPÉ -->
     <footer class="bg-black text-center py-4 border-top border-secondary fixed-bottom">
         <div class="container text-muted">
-            <p>&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End.</p>
+            <p class="mb-0">&copy; 2026 GAMER ZONE Ltda. Desenvolvido para a Atividade de Front-End.</p>
         </div>
     </footer>
 
-    <!-- Scripts necessários: Bootstrap e jQuery -->
-    <script src="https://jsdelivr.net"></script>
+    <!-- Scripts necessários corrigidos: Bootstrap e jQuery oficiais -->
     <script src="https://jquery.com"></script>
+    <script src="https://jsdelivr.net"></script>
 
     <!-- [REQUISITO: JAVASCRIPT / JQUERY PARA INTERAÇÃO E VALIDAÇÃO] -->
     <script>
